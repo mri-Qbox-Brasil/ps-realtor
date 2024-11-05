@@ -140,7 +140,7 @@ end)
 
 -- Callbacks
 RegisterNUICallback("setWaypoint", function (data, cb)
-	lib.notify({ description = 'Waypoint was set!' , type = 'success'})
+	lib.notify({ description = 'Propriedade marcada no GPS!' , type = 'success'})
 	SetNewWaypoint(data.x, data.y)
 	cb("ok")
 end)
@@ -155,7 +155,7 @@ RegisterNUICallback("updatePropertyData", function(data, cb)
 		local shellName = currentShells[newData.shell].hash
 
 		if not IsModelInCdimage(shellName) then
-			lib.notify({ description = 'The Interior '..newData.shell..' does not exist!', type = 'error'})
+			lib.notify({ description = 'O interior '..newData.shell..' não existe!', type = 'error'})
 			return
 		end
 	end
@@ -256,7 +256,7 @@ function ZoneThread(type, promise)
     local height = 2.5
 
 	if type == "garage" then
-		lib.notify({description="Best to get in a vehicle to see how the zone would look.", type="error"})
+		lib.notify({description="A melhor maneira é entrar em um veículo para ver como a área/zona vai ficar", type="error"})
 
 		length = 3.0
 		width = 5.0

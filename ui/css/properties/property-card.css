@@ -70,6 +70,8 @@
     margin-right: 0.2vw;
     text-align: center;
 
+    font-size: 1.2rem;
+
     background-color: var(--tile-color);
 
     display: flex;

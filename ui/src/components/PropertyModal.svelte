@@ -27,7 +27,7 @@
 			<h1
 				class="text-4xl px-[2rem] text-center font-bold w-full py-4 h-fit bg-[color:var(--color-tertiary)] flex flex-row items-center"
 			>
-			<p class="absolute w-full text-center left-0 z-10">Property Details</p>
+			<p class="absolute w-full text-center left-0 z-10">Detalhes da Propriedade</p>
 				<button
 					class="grid z-[11] place-items-center w-16 h-16 bg-[color:var(--color-secondary)] text-[color:var(--color-accent)]"
 					on:click={() => (selectedProperty = null)}

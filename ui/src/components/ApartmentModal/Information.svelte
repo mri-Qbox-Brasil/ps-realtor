@@ -15,7 +15,7 @@
 			}}
 		>
 			<i class="fa-solid fa-location-dot" />
-			<p class="text-2xl font-bold">Set Waypoint</p>
+			<p class="text-2xl font-bold">Marcar no GPS</p>
 		</button>
 	</div>
 {/if}
