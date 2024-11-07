@@ -32,7 +32,7 @@
 			on:click={() => (selectedProperty = property)}
 			in:fly={{ y: 10, duration: 250 }}
 		>
-			View Property
+			Ver Propriedade
 		</button>
 	</div>
 
@@ -46,18 +46,18 @@
 			{property.property_id}
 		</p>
 		<p class="property-address">{property.region ? property.region : ''}</p>
-		<p class="property-cost">$ {property.price?.toLocaleString()} USD</p>
+		<p class="property-cost">R$ {property.price?.toLocaleString()}</p>
 		<div class="property-details">
 			{#if $REALTOR_GRADE >= 0 && property.for_sale}
 				<div class="each-tile">
-					<i class="fas fa-dollar-sign" />
-					For Sale
+					<i class="fa-solid fa-dollar-sign" style="color: #63E6BE;"/>
+					Á venda
 				</div>
 			{/if}
 
 			<div class="each-tile">
 				<i class="fas fa-image" />
-				Gallery: {$SHELLS[property.shell]
+				Fotos: {$SHELLS[property.shell]
 					? $SHELLS[property.shell].imgs.length
 					: 0}
 			</div>
@@ -69,11 +69,11 @@
 
 			<div class="each-tile">
 				<i class="fas fa-truck-front" />
-				Garage: {property.garage_data
+				Garagem: {property.garage_data
 					? Object.keys(property.garage_data).length > 0
-						? 'Yes'
-						: 'No'
-					: 'No'}
+						? 'Sim'
+						: 'Não'
+					: 'Não'}
 			</div>
 		</div>
 	</div>

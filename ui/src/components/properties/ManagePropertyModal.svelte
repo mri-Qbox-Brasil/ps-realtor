@@ -23,7 +23,7 @@
 		(property) => property.property_id === selectedProperty.property_id
 	)
 
-	let forSaleDropDownValues = ['For Sale', 'Not For Sale'],
+	let forSaleDropDownValues = ['Á venda', 'Indisponível'],
 		selectedForSaleDropdownValue = selectedProperty.for_sale
 			? forSaleDropDownValues[0]
 			: forSaleDropDownValues[1]
@@ -120,7 +120,7 @@
 				<div class="header">
 					<div class="heading-title-wrapper">
 						<i class="fas fa-pen info-icon" />
-						<p>Manage Property</p>
+						<p>Gerenciar Propriedade</p>
 					</div>
 					<div on:click={() => (manageProperty = false)}>
 						<i class="fas fa-xmark close-icon" />
@@ -132,9 +132,9 @@
 				>
 					<div class="data-details-manage-property">
 						<div class="left-column">
-							<p class="heading">Live Description</p>
+							<p class="heading">Descrição ao vivo</p>
 							<p class="info">
-								Change the settings after the creation!
+								Altere as configurações após a criação!
 							</p>
 						</div>
 
@@ -144,14 +144,14 @@
 									id="sell-property"
 									class="form-row-wrapper"
 								>
-									<p class="label">Sell Property</p>
+									<p class="label">Alterar Status da Propriedade</p>
 
 									<div class="action-row">
 										<SetNotSetIndicator
-											leftValue={selectedProperty.for_sale
-												? 'Set'
-												: 'Not Set'}
-											rightValue={selectedForSaleDropdownValue}
+											rightValue={selectedProperty.for_sale
+												? 'Definido'
+												: 'Não definido'}
+											leftValue={'Status'}
 											good={selectedProperty.for_sale}
 										/>
 
@@ -159,7 +159,7 @@
 											<FormWrapperDropdown
 												dropdownValues={forSaleDropDownValues}
 												label=""
-												insideLabel="Change: "
+												insideLabel="Alterar: "
 												selectedValue={selectedForSaleDropdownValue}
 												on:selected-dropdown={(event) =>
 													updateForSaleDropdownValue(
@@ -176,14 +176,11 @@
 									id="finalize-sell-property"
 									class="form-row-wrapper"
 								>
-									<p class="label">Finalize Sell Property</p>
+									<p class="label">Finalizar Venda da Propriedade</p>
 
 									<div class="action-row">
 										<SetNotSetIndicator
-											leftValue={finalizedOwner?.trim() !==
-											''
-												? 'Set'
-												: 'Not Set'}
+											leftValue={finalizedOwner?.trim() !== '' ? 'Definido' : 'Não definido'}
 											rightValue=""
 											good={finalizedOwner?.trim() !== ''}
 										/>
@@ -215,12 +212,12 @@
 							    	id="manage-description"
 							    	class="form-row-wrapper"
 							    >
-							    	<p class="label">Manage Description</p>
+							    	<p class="label">Alterar Descrição</p>
     
 							    	<div class="action-row">
 							    		<textarea
 							    			rows="3"
-							    			placeholder="Write a short and sweet description about the property..."
+							    			placeholder="Escreva uma breve e encantadora descrição sobre a propriedade..."
 							    			style="width: 18vw;"
 							    			bind:value={description}
 							    			on:keyup={() =>
@@ -235,7 +232,7 @@
 							    </div>
 
 							    <div id="manage-price" class="form-row-wrapper">
-							    	<p class="label">Manage Price</p>
+							    	<p class="label">Alterar Preço (R$)</p>
     
 							    	<div class="action-row">
 							    		<input
@@ -259,7 +256,7 @@
 							    	id="manage-shell-type"
 							    	class="form-row-wrapper"
 							    >
-							    	<p class="label">Manage Shell</p>
+							    	<p class="label">Alterar Shell (Interior)</p>
     
 							    	<div class="action-row">
 							    		<FormWrapperDropdown
@@ -287,20 +284,20 @@
 							    	class="form-row-wrapper"
 							    	style="margin-top: 2vw"
 							    >
-							    	<p class="label">Add Images</p>
+							    	<p class="label">Adicionar Imagens</p>
     
 							    	<div class="action-row">
 							    		<input
 							    			id="img-name"
 							    			type="text"
-							    			placeholder="Name"
+							    			placeholder="Nome"
 							    			style="width: 7vw;"
 							    			bind:value={newImageName}
 							    		/>
 							    		<input
 							    			id="img-url"
 							    			type="text"
-							    			placeholder="URL"
+							    			placeholder="URL/Link"
 							    			style="width: 7vw;"
 							    			bind:value={newImageUrl}
 							    		/>
@@ -322,45 +319,45 @@
     
 		                        {#if selectedProperty.shell !== 'mlo'}
 							        <div id="manage-door" class="form-row-wrapper">
-							        	<p class="label">Manage Door</p>
+							        	<p class="label">Gerenciar Porta</p>
     
 							        	<div class="action-row">
 							        		<SetNotSetIndicator
-							        			leftValue="Door"
+							        			leftValue="Porta"
 							        			rightValue={doorValueSet
-							        				? 'Set'
-							        				: 'Not Set'}
+							        				? 'Definido'
+							        				: 'Não definido'}
 							        			good={doorValueSet}
 							        		/>
 							        		<button
 							        			class="regular-button"
 							        			on:click={() =>
 							        				handleZonePlacement('door')}
-							        			>New Location</button
+							        			>Nova localização</button
 							        		>
 							        		<button class="disable-button"
-							        			>Remove</button
+							        			>Remover</button
 							        		>
 							        	</div>
 							        </div>
 							    {/if}
     
 							    <div id="manage-garage" class="form-row-wrapper">
-							    	<p class="label">Manage Garage</p>
+							    	<p class="label">Gerenciar Garagem</p>
 
 							    	<div class="action-row">
 							    		<SetNotSetIndicator
-							    			leftValue="Garage"
+							    			leftValue="Garagem"
 							    			rightValue={garageValueSet
-							    				? 'Set'
-							    				: 'Not Set'}
+							    				? 'Definido'
+							    				: 'Não definido'}
 							    			good={garageValueSet}
 							    		/>
 							    		<button
 							    			class="regular-button"
 							    			on:click={() =>
 							    				handleZonePlacement('garage')}
-							    			>New Location</button
+							    			>Nova Localização</button
 							    		>
 							    		<button
 							    			class="disable-button"
@@ -370,7 +367,7 @@
 							    					{},
 							    					'garage_data',
 							    					null
-							    				)}>Remove</button
+							    				)}>Remover</button
 							    		>
 							    	</div>
 							    </div>
@@ -382,7 +379,7 @@
 				<div class="large-footer-modal-footer-manage-property">
 					{#if $REALTOR_GRADE >= $CONFIG.deleteProperty}
 						<button class="delete-button" on:click={deleteProperty}>
-							Delete Property
+							Excluir Propriedade
 						</button>
 					{/if}
 				</div>

@@ -7,13 +7,13 @@
 	import ManagePropertyModal from './ManagePropertyModal.svelte'
 	import { SendNUI } from '@utils/SendNUI'
 
-	const highLowDropdown = ['High to Low', 'Low to High']
+	const highLowDropdown = ['Maior Preço', 'Menor Preço']
 	let selectedHighLowValue = highLowDropdown[0]
 
-	const forSaleDropdown = ['For Sale', 'All Properties']
+	const forSaleDropdown = ['Somente propriedades a venda', 'Todas as propriedades']
 	let selectedForSaleValue = forSaleDropdown[0]
 
-	const typeDropdown = ['House', 'Apartments']
+	const typeDropdown = ['Casa', 'Apartamento']
 	let selectedTypeValue = typeDropdown[0]
 
 	let selectedProperty: IProperty | null = null,
@@ -168,15 +168,15 @@
 		<img src="images/apts-bg.png" alt="Apartments Background" />
 
 		<div class="search-data">
-			<p>Find your next property purchase</p>
+			<p>Encontre o lar dos seus sonhos!</p>
 			<p class="light-text">
-				From houses, to garages, to the best sales.
+				Descubra imóveis incríveis com condições imperdíveis
 			</p>
 
 			<div class="search-bar">
 				<input
 					type="text"
-					placeholder="Explore all real estate"
+					placeholder="Pesquise imóveis"
 					bind:value={searchTerm}
 				/>
 				<i class="fas fa-magnifying-glass" />
@@ -185,13 +185,14 @@
 	</div>
 
 	<div class="properties-heading-wrapper">
-		<p class="heading">All Properties Listed</p>
+		<p class="heading">Lista de Propriedades</p>
 
 		<div class="filters-wrapper">
 			<div>
 				<DropdownComponent
 					dropdownValues={highLowDropdown}
 					label=""
+					insideLabel="Ordenar por:"
 					selectedValue={selectedHighLowValue}
 					id="high-low-dd"
 					on:selected-dropdown={(event) =>
@@ -199,10 +200,11 @@
 				/>
 			</div>
 
-			<div style="margin-left: 7vw;">
+			<div style="margin-left: 10.45vw;">
 				<DropdownComponent
 					dropdownValues={forSaleDropdown}
 					label=""
+					insideLabel="Exibir: "
 					selectedValue={selectedForSaleValue}
 					id="for-sale-dd"
 					on:selected-dropdown={(event) =>
@@ -210,12 +212,12 @@
 				/>
 			</div>
 
-			<div style="margin-left: 7vw;">
+			<div style="margin-left: 14vw;">
 				<DropdownComponent
 					dropdownValues={typeDropdown}
 					label=""
 					selectedValue={selectedTypeValue}
-					insideLabel="Type: "
+					insideLabel="Tipo: "
 					id="type-dd"
 					on:selected-dropdown={(event) =>
 						handleDropDownSelections('type', event.detail)}

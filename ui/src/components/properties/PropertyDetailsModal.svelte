@@ -23,7 +23,7 @@
                     <div class="header">
                         <div class="heading-title-wrapper">
                             <i class="fas fa-circle-info info-icon"></i>
-                            <p>Property Details</p>
+                            <p>Detalhes da Propriedade</p>
                         </div>
                         <div on:click={() => selectedProperty = null}>
                             <i class="fas fa-xmark close-icon"></i>
@@ -55,11 +55,11 @@
                             </div>
 
                             <div class="right-column">
-                                <p class="title">$ {selectedProperty.price?.toLocaleString()} USD</p>
+                                <p class="title">R$ {selectedProperty.price?.toLocaleString()}</p>
 
                                 <button class="waypoint" on:click={() => SendNUI('setWaypoint', selectedProperty.door_data)}>
                                     <i class="fas fa-location-dot"></i>
-                                    <p>Set Waypoint</p>
+                                    <p>Marcar no GPS</p>
                                 </button>
 
                                 <div class="tiles-wrapper">
@@ -89,7 +89,7 @@
                     </div>
                     <!-- {#if $REALTOR_GRADE >= $CONFIG.manageProperty} -->
                         <div class="large-footer-modal-footer">
-                            <button on:click={() => manageProperty = true}>Manage Property</button>
+                            <button on:click={() => manageProperty = true}>Gerenciar Propriedade</button>
                         </div>
                     <!-- {/if} -->
                 </div>

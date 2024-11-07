@@ -113,9 +113,9 @@ function zoneCreator.editPoint()
         zoneCreator.editIndex = zoneCreator.deleteIndex
 
         lib.hideTextUI()
-        lib.showTextUI('[K] - Set Point \n [N] - Cancel Set')
+        lib.showTextUI('[K] - Definir Ponto \n [N] - Cancelar Ponto')
     else
-        lib.notify({ description = 'Need to be close to a point', type = 'error' })
+        lib.notify({ description = 'Você precisa estár próximo a um ponto existente.', type = 'error' })
     end
 end
 
@@ -305,7 +305,7 @@ local function mloDoor()
                     end
 
                     if exports.ox_doorlock:getDoorIdFromEntity(entity) then
-                        lib.notify({ description = 'This door already registered in ox_doorlock', type = 'error' })
+                        lib.notify({ description = 'Está porta já esta cadastrada no ox_doorlock', type = 'error' })
                     end
                 end
 
@@ -329,7 +329,7 @@ local function mloDoor()
                 }
 
                 if doubleDoors and #(door.coords - data.coords) <= 0 then
-                    lib.notify({ description = 'Select another door, you already selected this as first door!', type = 'error' })
+                    lib.notify({ description = 'Selecione outra porta, você já selecionou a porta atual como a primeira porta!', type = 'error' })
                 else
                     data = doubleDoors and {
                         data,
