@@ -9,7 +9,7 @@
 	// basic available tabs
 	let availableNavTabs: ITab[] = [
 		{
-			name: 'Properties',
+			name: 'Propriedades',
 			icon: 'fas fa-home',
 			component: PropertyBase,
 		},
@@ -19,7 +19,7 @@
 	REALTOR_GRADE.subscribe((value) => {
 		if (value >= $CONFIG.setApartments) {
 			availableNavTabs.push({
-				name: 'Apartments',
+				name: 'Apartamentos',
 				icon: 'fas fa-building',
 				component: ApartmentsBase,
 			});
@@ -27,7 +27,7 @@
 
 		if (value >= $CONFIG.listNewProperty) {
 			availableNavTabs.push({
-				name: 'List New Property',
+				name: 'Listar Nova Propriedade',
 				icon: 'fas fa-plus-circle',
 				component: ListPropertiesBase,
 			});
@@ -38,19 +38,19 @@
 
 	function selectLeftTab(tab) {
 		selectedTab = tab;
-		if(tab.name.toLocaleLowerCase() === 'logout') {
+		if(tab.name.toLocaleLowerCase() === 'sair') {
 			SendNUI("hideUI", {})
 		}
 	}
 
 	let footerNavs: ITab[] = [
+		// {
+		// 	name: 'Help Center',
+		// 	icon: 'fas fa-life-ring',
+		// 	component: '',
+		// },
 		{
-			name: 'Help Center',
-			icon: 'fas fa-life-ring',
-			component: '',
-		},
-		{
-			name: 'Logout',
+			name: 'Sair',
 			icon: 'fas fa-arrow-right-from-bracket',
 			component: '',
 		}
@@ -80,7 +80,7 @@
 					</div>
 				{/each}
 
-				<div class="discord-wrapper">
+				<!-- <div class="discord-wrapper">
 					<div class="discord-emoji">
 						<img src="images/discord-emoji.png" alt="Discord Emoji" />
 					</div>
@@ -95,7 +95,7 @@
 					<button class="visit-discord-btn">
 						Visit Discord
 					</button>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>

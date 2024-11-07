@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte'
 
-	export let leftValue = 'Set',
-		rightValue = '',
+	export let leftValue = 'Definido',
+		rightValue = 'Não definido',
 		good = true,
 		id = 'status-indicator'
 

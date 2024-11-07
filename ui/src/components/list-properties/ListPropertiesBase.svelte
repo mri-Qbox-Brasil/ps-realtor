@@ -85,10 +85,10 @@
 	<div class="no-new-properties-base">
 		<img src="images/House.png" alt="House Icon" />
 
-		<p>You haven't listed a property yet!</p>
+		<p>Você ainda não adicionou nenhuma propriedade!</p>
 
 		<button on:click={() => (addingNewProperty = !addingNewProperty)}>
-			Add New Property
+			Adicionar nova propriedade
 		</button>
 	</div>
 {:else}
@@ -96,7 +96,7 @@
 		<div class="header">
 			<div class="heading-title-wrapper">
 				<i class="fas fa-circle-plus add-icon"></i>
-				<p>List New Property</p>
+				<p>Listar Nova Propriedade</p>
 			</div>
 			<div>
 				<i class="fas fa-chevron-down chevron-icon"></i>
@@ -105,13 +105,13 @@
 
 		<div class="body-wrapper overflow-y-auto">
 			<div class="left-column">
-				<p class="title">Property Information</p>
+				<p class="title">Info. da Propriedade</p>
 
-				<p class="info">Make sure to fill everything out!</p>
+				<p class="info">Tenha certeza de preencher todos os campos!</p>
 			</div>
 			<div class="right-column">
 				<div id="property-type" class="form-row-wrapper">
-					<p class="label">Property Type</p>
+					<p class="label">Tipo da Propriedade</p>
 
 					<div class="action-row">
 						<FormWrapperDropdown
@@ -120,7 +120,7 @@
 							id="new-listing-dd-shell-type"
                             uppercase={true}
 							selectedValue={currentType}
-							insideLabel="Type: "
+							insideLabel="Tipo: "
 							on:selected-dropdown={(event) =>
 								(currentType = event.detail)}
 						/>
@@ -129,11 +129,11 @@
 
                 {#if currentType === 'mlo'}
 				<div id="zone-creation" class="form-row-wrapper">
-					<p class="label">Zone Type</p>
+					<p class="label">Definir Área da Residência</p>
 					<div class="action-row">
 						<SetNotSetIndicator
-					    	leftValue="Zone"
-					    	rightValue={zone_data ? 'Set' : 'Not Set'}
+					    	leftValue="Zona"
+					    	rightValue={zone_data ? 'Definida' : 'Não definida'}
 					    	good={zone_data}
 					    />
 						<button
@@ -147,20 +147,20 @@
 
 
 				<div id="door-creation" class="form-row-wrapper">
-					<p class="label">Door Creation <button class="regular-button" on:click={addNewElement}>+</button></p>
+					<p class="label">Criação de Portas <button class="regular-button" on:click={addNewElement}>+</button></p>
 
 					{#each elements as element, index}
                         {#if currentType === 'mlo' || (currentType === 'shell' && index === 0)}
                         <div class="action-row" style="margin-bottom: 10px;">
 							<SetNotSetIndicator
-								leftValue="Door"
-								rightValue={element.door_data ? 'Set' : 'Not Set'}
+								leftValue="Porta"
+								rightValue={element.door_data ? 'Definido' : 'Não definido'}
 								good={element.door_data}
 							/>
 							<button
 								class="regular-button"
 								on:click={() => createZone('door', index)}
-								>{element.door_data ? 'Unset' : 'Set'}</button
+								>{element.door_data ? 'Excluir definição' : 'Definir local da porta'}</button
 							>
 							
                             {#if currentType === 'mlo'}
@@ -174,12 +174,12 @@
 				</div>
 
 				<div id="garage-creation" class="form-row-wrapper">
-					<p class="label">Garage Creation</p>
+					<p class="label">Criação de Garagem</p>
 
 					<div class="action-row">
 						<SetNotSetIndicator
-							leftValue="Garage"
-							rightValue={garage_data ? 'Set' : 'Not Set'}
+							leftValue="Garagem"
+							rightValue={garage_data ? 'Definido' : 'Não definido'}
 							good={garage_data}
 						/>
 						<button
@@ -190,7 +190,7 @@
 									: createZone('garage')}
 							>{garage_data
 								? 'Remove Garage'
-								: 'Set Garage'}</button
+								: 'Definir área da garagem'}</button
 						>
 					</div>
 				</div>
@@ -221,19 +221,19 @@
 
 
 				<div id="description" class="form-row-wrapper">
-					<p class="label">Description</p>
+					<p class="label">Descrição</p>
 
 					<div class="action-row">
 						<textarea
 							rows="5"
-							placeholder="Write a short and sweet description about the property..."
+							placeholder="Escreva uma breve e encantadora descrição sobre a propriedade..."
 							bind:value={description}
 						/>
 					</div>
 				</div>
 
 				<div id="price" class="form-row-wrapper">
-					<p class="label">Price</p>
+					<p class="label">Preço</p>
 
 					<div class="action-row">
 						<input

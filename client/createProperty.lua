@@ -112,18 +112,18 @@ local createProperty = {
     removeDoor = function(self, index)
         if not self.door_data then return end
         self.door_data[index] = nil
-        lib.notify({ description = 'Door was removed!', type = 'error'})
+        lib.notify({ description = 'A porta foi removida!', type = 'error'})
     end,
 
     removeGarage = function(self)
         self.garage_data = nil
-        lib.notify({ description = 'Garage was removed!', type = 'error'})
+        lib.notify({ description = 'A garagem foi removida!', type = 'error'})
         return true
     end,
 
     removeGarden = function(self)
         self.zone_data = nil
-        lib.notify({ description = 'Garden was removed!', type = 'error'})
+        lib.notify({ description = 'O jardim foi removido!', type = 'error'})
         return true
     end,
 
@@ -144,7 +144,7 @@ local createProperty = {
 
         TriggerServerEvent('bl-realtor:server:registerProperty', data)
 
-        lib.notify({ description = 'Property was created!', type = 'success'})
+        lib.notify({ description = 'A propriedade foi criada com sucesso.', type = 'success'})
         self:cancelCreating()
     end,
 }

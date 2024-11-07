@@ -48,7 +48,7 @@
 	<div
 		class="flex flex-col gap-4 h-full overflow-y-scroll scroll-style scroll-style-vertical w-full"
 	>
-		<h1 class="text-3xl font-bold mb-2">Manage Property</h1>
+		<h1 class="text-3xl font-bold mb-2">Gerenciar Propriedade</h1>
 		{#if $REALTOR_GRADE >= $CONFIG.changePropertyForSale}
 			<div class="flex flex-row gap-2 items-center">
 				<p class="text-2xl font-bold">Set Property For Sale</p>
@@ -421,7 +421,7 @@
 		{/if}
 
 		<div class="flex flex-row gap-2 items-center">
-			<p class="text-2xl font-bold">Manage Door</p>
+			<p class="text-2xl font-bold">Gerenciar Porta</p>
 			<div class="flex flex-row w-fit gap-4 items-center justify-center">
 				<button
 					class="bg-[color:var(--color-tertiary)] flex flex-row items-center justify-center gap-2 p-2"
@@ -435,12 +435,12 @@
 					}}
 				>
 					<i class="fas fa-pen" />
-					<p>Edit</p>
+					<p>Editar</p>
 				</button>
 			</div>
 		</div>
 		<div class="flex flex-row gap-2 items-center">
-			<p class="text-2xl font-bold">Manage Garage</p>
+			<p class="text-2xl font-bold">Gerenciar Garagem</p>
 			{#if selectedProperty.garage_data ? (selectedProperty.garage_data.x ? true : false) : false}
 				<!-- {#if true} -->
 				<div
@@ -458,7 +458,7 @@
 						}}
 					>
 						<i class="fas fa-pen" />
-						<p>Move</p>
+						<p>Mover</p>
 					</button>
 					<button
 						class="bg-[color:var(--color-tertiary)] flex flex-row items-center justify-center gap-2 p-2"
@@ -473,7 +473,7 @@
 						}}
 					>
 						<i class="fas fa-times" />
-						<p>Remove</p>
+						<p>Remover</p>
 					</button>
 				</div>
 			{:else}
@@ -496,7 +496,7 @@
 
 		{#if $REALTOR_GRADE >= $CONFIG.deleteProperty}
 			<div class="flex flex-row gap-2 items-center">
-				<p class="text-2xl font-bold">Delete Property</p>
+				<p class="text-2xl font-bold">Excluir Propriedade</p>
 				<div
 					class="flex flex-row w-fit gap-4 items-center justify-center"
 				>
