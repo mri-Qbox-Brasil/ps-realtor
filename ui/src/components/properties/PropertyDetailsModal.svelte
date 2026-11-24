@@ -47,7 +47,7 @@
                                     {#key selectedProperty.shell}
                                         {#key selectedProperty.extra_imgs}
                                             {#each getImgArray() as img}
-                                                <img src={img.url} alt="Detail of the selected property" />
+                                                <img src={img.url} alt="Foto do imóvel" />
                                             {/each}
                                         {/key}
                                     {/key}
@@ -66,12 +66,12 @@
                                     {#if $REALTOR_GRADE >= 0 && selectedProperty.for_sale}
                                         <div class="each-tile">
                                             <i class="fas fa-dollar-sign"></i>
-                                            For Sale
+                                            À venda
                                         </div>
                                     {/if}
                                     <div class="each-tile">
                                         <i class="fas fa-image"></i>
-                                        Gallery: {$SHELLS[selectedProperty.shell] ? $SHELLS[selectedProperty.shell].imgs.length : 0}
+                                        Fotos: {$SHELLS[selectedProperty.shell] ? $SHELLS[selectedProperty.shell].imgs.length : 0}
                                     </div>
 
                                     <div class="each-tile">
@@ -81,7 +81,7 @@
                                     
                                     <div class="each-tile">
                                         <i class="fas fa-truck-front"></i>
-                                        Garage: {selectedProperty.garage_data ? Object.keys(selectedProperty.garage_data).length > 0 ? 'Yes' : 'No' : 'No'}
+                                        Garagem: {selectedProperty.garage_data ? Object.keys(selectedProperty.garage_data).length > 0 ? 'Sim' : 'Não' : 'Não'}
                                     </div>
                                 </div>
                             </div>

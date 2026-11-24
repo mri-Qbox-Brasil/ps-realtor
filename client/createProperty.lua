@@ -40,7 +40,7 @@ local createProperty = {
         local ped = cache.ped
         local function createZone()
             local zoneDataPromise = promise.new()
-            lib.showTextUI('[E] - to confirm | [h] to cancel')
+            lib.showTextUI('[E] - confirmar | [H] - cancelar')
             ZoneThread(type, zoneDataPromise)
 
             local success = Citizen.Await(zoneDataPromise)
@@ -79,7 +79,7 @@ local createProperty = {
             elseif type == "garage" then
                 local zoneData = createZone()
                 if not zoneData then return false end
-                setZoneData(zoneData, 3.0, 5.0, 'Garage was set!')
+                setZoneData(zoneData, 3.0, 5.0, 'Garagem definida!')
                 self.garage_data = zoneData
             end
         else
@@ -93,10 +93,10 @@ local createProperty = {
 
             if type == "door" then
                 zoneData.locked = false
-                setZoneData(zoneData, 1.5, 2.2, 'Door was set!')
+                setZoneData(zoneData, 1.5, 2.2, 'Porta definida!')
                 self.door_data = zoneData
             elseif type == "garage" then
-                setZoneData(zoneData, 3.0, 5.0, 'Garage was set!')
+                setZoneData(zoneData, 3.0, 5.0, 'Garagem definida!')
                 self.garage_data = zoneData
             end
         end

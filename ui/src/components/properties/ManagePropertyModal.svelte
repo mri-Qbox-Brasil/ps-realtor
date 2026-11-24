@@ -201,7 +201,7 @@
 													},
 													'owner',
 													finalizedOwner
-												)}>Request</button
+												)}>Pedir confirmação</button
 										>
 									</div>
 								</div>
@@ -303,7 +303,7 @@
 							    		/>
 							    		<button
 							    			class="regular-button"
-							    			on:click={addNewImage}>Add</button
+							    			on:click={addNewImage}>Adicionar</button
 							    		>
 							    	</div>
     
