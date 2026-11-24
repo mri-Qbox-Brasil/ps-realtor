@@ -22,7 +22,7 @@ local zoneCreator = {
     lowestPoint = nil
 }
 
-local polyText = '[C] - +/- point  \n [H] finish  \n [Scroll] change height \n [K] Edit Point'
+local polyText = '[C] - pôr/tirar ponto  \n [H] - terminar  \n [Rodinha] - altura \n [K] - ajustar ponto'
 
 local function render()
     local points = zoneCreator.polygon
@@ -278,7 +278,7 @@ local function mloDoor()
     local doubleDoors = false
     local data
 
-    lib.showTextUI('[E] - to add door | [h] cancel')
+    lib.showTextUI('[E] - adicionar porta | [H] - cancelar')
 
     while true do
         local hit, entity, coords = lib.raycast.cam(1|16)
@@ -314,8 +314,8 @@ local function mloDoor()
                 end
 
                 local alert = not doubleDoors and lib.alertDialog({
-                    header = 'Double Doors?',
-                    content = 'Confirm if MLO has 2 doors',
+                    header = 'Porta dupla?',
+                    content = 'Confirme se o MLO tem 2 portas',
                     centered = true,
                     cancel = true
                 })

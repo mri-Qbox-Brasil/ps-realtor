@@ -189,7 +189,7 @@
 									? removeGarage()
 									: createZone('garage')}
 							>{garage_data
-								? 'Remove Garage'
+								? 'Remover garagem'
 								: 'Definir área da garagem'}</button
 						>
 					</div>
@@ -197,12 +197,12 @@
 
                 {#if currentType !== 'mlo'}
 				<div id="garden-creation" class="form-row-wrapper">
-					<p class="label">Garden Creation</p>
+					<p class="label">Jardim</p>
 
 					<div class="action-row">
 						<SetNotSetIndicator
-							leftValue="Garden"
-							rightValue={garden_data ? 'Set' : 'Not Set'}
+							leftValue="Jardim"
+							rightValue={garden_data ? 'Definido' : 'Não definido'}
 							good={garden_data}
 						/>
 						<button
@@ -248,7 +248,7 @@
 
 				{#if currentType === 'shell'}
 					<div id="shell-type" class="form-row-wrapper">
-						<p class="label">Shell Type</p>
+						<p class="label">Interior (shell)</p>
 
 						<div class="action-row">
 							<FormWrapperDropdown
@@ -270,7 +270,7 @@
 
 		<div class="list-new-property-form-footer">
 			{#if valid}
-				<button on:click={createPropertyMethod}>Create Property</button>
+				<button on:click={createPropertyMethod}>Criar propriedade</button>
 			{/if}
 		</div>
 	</div>

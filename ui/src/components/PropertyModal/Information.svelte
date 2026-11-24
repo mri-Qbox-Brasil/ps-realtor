@@ -23,7 +23,7 @@
 					class="w-fit p-2 px-4 bg-[color:var(--color-tertiary)] items-center justify-center flex flex-row gap-4"
 				>
 					<i class="fas fa-dollar-sign" />
-					<p>For Sale</p>
+					<p>À venda</p>
 				</div>
 			{/if}
 		</div>

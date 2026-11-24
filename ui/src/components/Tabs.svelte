@@ -57,7 +57,7 @@
 	style="top: {y}px; left: {x}px;"
 >
 	<label class="control control-checkbox">
-        For Sale Houses
+        Casas à venda
             <input type="checkbox" checked={showBlipsForSale}
 			on:change={() => {
 				showBlipsForSale = !showBlipsForSale

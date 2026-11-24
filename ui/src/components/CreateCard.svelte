@@ -58,7 +58,7 @@
 	</div>
 	<!-- Shell -->
 	<div class="flex flex-row gap-2 items-center w-full">
-		<p class="text-2xl font-bold">Shell Type</p>
+		<p class="text-2xl font-bold">Interior (shell)</p>
 		<select
 			class="text-2xl bg-[color:var(--color-tertiary)] p-2"
 			bind:value={shell}
@@ -74,7 +74,7 @@
 		<div
 			class="bg-[color:var(--color-tertiary)] flex flex-row px-2 items-center"
 		>
-			{door_data ? 'Set' : 'Not Set'}
+			{door_data ? 'Definido' : 'Não definido'}
 			<div class=" aspect-square grid place-items-center p-2">
 				<i
 					class="fas text-2xl fa-{door_data

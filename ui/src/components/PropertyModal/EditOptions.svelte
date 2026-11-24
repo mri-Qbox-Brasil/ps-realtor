@@ -51,7 +51,7 @@
 		<h1 class="text-3xl font-bold mb-2">Gerenciar Propriedade</h1>
 		{#if $REALTOR_GRADE >= $CONFIG.changePropertyForSale}
 			<div class="flex flex-row gap-2 items-center">
-				<p class="text-2xl font-bold">Set Property For Sale</p>
+				<p class="text-2xl font-bold">Imóvel à venda</p>
 				<div
 					class="flex flex-row w-fit gap-4 items-center justify-center"
 				>
@@ -72,8 +72,8 @@
 						class="text-2xl bg-[color:var(--color-tertiary)] p-2"
 						bind:value={tempIsForSale}
 					>
-						<option value={true}>For Sale</option>
-						<option value={false}>Not For Sale</option>
+						<option value={true}>À venda</option>
+						<option value={false}>Fora de venda</option>
 					</select>
 					<button
 						class="bg-[color:var(--color-tertiary)] flex flex-row items-center justify-center gap-2 p-2"
@@ -90,8 +90,8 @@
 						<i class="fas fa-check" />
 						<p>
 							{tempIsForSale == true
-								? 'Set For Sale'
-								: 'Set Not For Sale'}
+								? 'Pôr à venda'
+								: 'Tirar da venda'}
 						</p>
 					</button>
 				</div>
@@ -414,7 +414,7 @@
 						}}
 					>
 						<i class="fas fa-plus" />
-						<p>Add</p>
+						<p>Adicionar</p>
 					</button>
 				</div>
 			</div>
@@ -489,7 +489,7 @@
 					}}
 				>
 					<i class="fas fa-plus" />
-					<p>Add</p>
+					<p>Adicionar</p>
 				</button>
 			{/if}
 		</div>

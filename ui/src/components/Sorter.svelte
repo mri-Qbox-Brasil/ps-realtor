@@ -197,7 +197,7 @@
 			<div class="grid place-items-center w-[8rem]">
 				<p class="text-xl flex flex-row items-center justify-center">
 					<i class="fas fa-dollar-sign" />
-					{filterSale ? 'For Sale Only' : 'All Properties'}
+					{filterSale ? 'Somente propriedades a venda' : 'Todas as propriedades'}
 				</p>
 			</div>
 		</button>

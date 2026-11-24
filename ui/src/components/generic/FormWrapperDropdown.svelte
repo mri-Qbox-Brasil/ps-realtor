@@ -57,7 +57,7 @@
             id="select"
             class="form-options-wrapper">
 				{#if dropdownValues.length < 1}
-					<div class="form-no-items-found">No items found</div>
+					<div class="form-no-items-found">Nenhum item encontrado</div>
 				{:else}
 					{#each dropdownValues as ddValue}
 						<div

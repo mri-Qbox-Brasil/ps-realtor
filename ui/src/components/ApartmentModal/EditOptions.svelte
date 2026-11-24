@@ -23,7 +23,7 @@
             on:click={() => {
                 areYouSure = true
             }}
-            >Add</button>
+            >Adicionar</button>
         </div>
         {#if areYouSure}
         <p class="text-2xl font-bold">Are you sure?</p>
